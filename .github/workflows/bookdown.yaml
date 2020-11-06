@@ -18,6 +18,10 @@ jobs:
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
+      - name: Copy file
+        run: |
+          cp .github/CNAME _book/CNAME
+          
       - uses: actions/upload-artifact@v1
         with:
           name: _book
