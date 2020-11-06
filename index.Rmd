@@ -1,5 +1,5 @@
 --- 
-title: "R Tutorial"
+title: "APSIM Tutorial"
 author: "Bangyou Zheng"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

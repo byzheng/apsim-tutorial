@@ -6,4 +6,5 @@ bookdown::gitbook:
         <li><a href="./">APSIM Tutorial</a></li>
       after: |
         <li><a href="https://github.com/byzheng/apsim-tutorial" target="blank">Github</a></li>
+    edit: https://github.com/byzheng/apsim-tutorial/edit/master/%s    
     
