@@ -40,6 +40,13 @@ jobs:
          name: _book # optional
          # Destination path
          path: _book # optional
+     - name: Download .github
+       uses: actions/download-artifact@v1.0.0
+       with:
+         # Artifact name
+         name: .github # optional
+         # Destination path
+         path: _book # optional
      - name: Deploy to GitHub Pages
        uses: Cecilapp/GitHub-Pages-deploy@master
        env:
