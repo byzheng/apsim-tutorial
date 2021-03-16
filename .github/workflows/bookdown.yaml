@@ -45,10 +45,9 @@ jobs:
          path: _book # optional
      - name: Deploy to GitHub Pages
        uses: Cecilapp/GitHub-Pages-deploy@master
+       env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
        with:
           EMAIL: ${{ secrets.EMAIL }}
           BUILD_DIR: _book/
-       env:
-          GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-                     # "_site/" by default
 
