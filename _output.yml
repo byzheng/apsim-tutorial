@@ -3,8 +3,8 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">APSIM Tutorial</a></li>
+        <li><a href="./">APSIM NG Tutorial</a></li>
       after: |
-        <li><a href="https://github.com/byzheng/apsim-tutorial" target="blank">Github</a></li>
-    edit: https://github.com/byzheng/apsim-tutorial/edit/master/%s    
+        <li><a href="https://github.com/byzheng/apsimng-tutorial" target="blank">Github</a></li>
+    edit: https://github.com/byzheng/apsimng-tutorial/edit/master/%s    
     

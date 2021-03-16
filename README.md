@@ -1,3 +1,5 @@
-# APSIM Tutorial
+# Tutorials for APSIM Next Generation
 
-![CHECK](https://github.com/byzheng/apsim-tutorial/workflows/CHECK/badge.svg)
+![CHECK](https://github.com/byzheng/apsimng-tutorial/workflows/CHECK/badge.svg)
+
+A collection of tutorials for [APSIM Next Generation](https://www.apsim.info).
