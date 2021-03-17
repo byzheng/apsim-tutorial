@@ -1,0 +1,5 @@
+#  (PART) Climate {-}
+
+# CO2 {#co2}
+
+The default CO2 is 350 ppm if it is not specified. CO2 might require to change in the case of simulations for climate change.
