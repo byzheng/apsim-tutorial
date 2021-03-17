@@ -50,8 +50,7 @@ jobs:
       - name: Run example apsimx files
         run: ../ApsimX/Bin/Models.exe *.apsimx
         working-directory: examples
-      - name: Check
-        run: ls
+      
       # Render book  
       - name: Render Book
         run: Rscript -e "bookdown::render_book('index.Rmd')"
