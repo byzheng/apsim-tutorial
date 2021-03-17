@@ -647,10 +647,15 @@
             },
             {
               "$type": "Models.Manager, Models",
-              "Code": "using System;\r\nusing Models.Core;\r\nusing Models.Interfaces;\r\nusing Models.PMF;\r\nusing APSIM.Shared.Utilities;\r\n\r\nnamespace Models\r\n{\r\n    [Serializable]\r\n    public class Script : Model\r\n    {\r\n        [Link] IClock Clock;\r\n        [Link] ISummary Summary;\r\n        [Link] IWeather Weather;\r\n        [EventSubscribe(\"Commencing\")]\r\n        private void DoDailyCalculations(object sender, EventArgs e)\r\n        {\r\n            Weather.CO2 = 400;\r\n        }\r\n    }\r\n}\r\n",
-              "Parameters": [],
-              "Name": "CO2",
-              "IncludeInDocumentation": true,
+              "Code": "using Models.Climate;\r\nusing System;\r\nusing Models.Core;\r\nusing APSIM.Shared.Utilities;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Models.PMF;\r\nusing Models;\r\nusing System.Xml.Serialization;\r\n\r\nnamespace Models\r\n{\r\n    [Serializable] \r\n    [System.Xml.Serialization.XmlInclude(typeof(Model))]\r\n    public class Script : Model\r\n    {\r\n        [Link] Weather Weather;\r\n        [Link] Clock Clock;\r\n    \r\n        [Description(\"CO2 concentration\")]\r\n        public double CO2 { get; set; }\r\n    \r\n        \r\n        [EventSubscribe(\"PreparingNewWeatherData\")]\r\n        private void OnPreparingNewWeatherData(object sender, EventArgs e)\r\n        {\r\n            Weather.CO2 = CO2;\r\n        }\r\n    }\r\n}\r\n",
+              "Parameters": [
+                {
+                  "Key": "CO2",
+                  "Value": "400"
+                }
+              ],
+              "Name": "SetCO2",
+              "IncludeInDocumentation": false,
               "Enabled": true,
               "ReadOnly": false
             }

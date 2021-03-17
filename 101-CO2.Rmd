@@ -2,4 +2,54 @@
 
 # CO2 {#co2}
 
-The default CO2 is 350 ppm if it is not specified. CO2 might require to change in the case of simulations for climate change.
+The default CO2 is 350 ppm if it is not specified. CO2 might require to change in the case of simulations for climate change or FACE experiment.
+
+The CO2 can be set using event `PreparingNewWeatherData`. 
+
+* Right click the `Field`.
+* Click the context menu `Add model`.
+* Find the `Manager` model and click to add it under `Field`.
+* Change the `Manager` to any names (e.g. `SetCO2`).
+* Copy the script below into tab `Script`.
+* Update the value of CO2 in the tab `Parameters`.
+
+```csharp
+using Models.Climate;
+using System;
+using Models.Core;
+using APSIM.Shared.Utilities;
+using System.Collections.Generic;
+using System.Text;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+
+namespace Models
+{
+    [Serializable] 
+    [System.Xml.Serialization.XmlInclude(typeof(Model))]
+    public class Script : Model
+    {
+        [Link] Weather Weather;
+        [Link] Clock Clock;
+    
+        [Description("CO2 concentration")]
+        public double CO2 { get; set; }
+    
+        
+        [EventSubscribe("PreparingNewWeatherData")]
+        private void OnPreparingNewWeatherData(object sender, EventArgs e)
+        {
+            Weather.CO2 = CO2;
+        }
+    }
+}
+
+```
+
+See figure below for the example script. 
+![](images/101-co2-fixed.png)
+
+An example apsimx file can be found from [here](examples/101-co2.apsimx). Right click to download it.
+
+See Experiment `ArizonaFACE92` and `ArizonaFACE93` in the [wheat validation test](https://github.com/APSIMInitiative/ApsimX/blob/cf01b42c36661f1b00d9b73ae07aaeb73517750d/Tests/Validation/Wheat/Wheat.apsimx) for more examples.

@@ -4,3 +4,6 @@
 .Ruserdata
 _book
 *.db
+*.bak
+*.db-wal
+*.db-shm
