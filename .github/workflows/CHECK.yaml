@@ -10,8 +10,17 @@ name: CHECK
 
 jobs:
   bookdown:
-    name: CHECK
-    runs-on: windows-latest
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest}
+          - {os: windows-latest}
+          - {os: ubuntu-18.04}
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@v1
