@@ -54,6 +54,9 @@ jobs:
       - name: Run example apsimx files
         run: ../ApsimX/Bin/Models.exe 101-co2.apsimx
         working-directory: examples
+      - name: CHECK
+        run: ls
+        working-directory: examples
       
       # Render book  
       - name: Render Book
