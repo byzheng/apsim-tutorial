@@ -52,7 +52,7 @@ jobs:
         working-directory: ApsimX
       
       - name: Run example apsimx files
-        run: ../ApsimX/Bin/Models.exe *.apsimx
+        run: ../ApsimX/Bin/Models.exe 101-co2.apsimx
         working-directory: examples
       
       # Render book  
