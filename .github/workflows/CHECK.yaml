@@ -53,10 +53,10 @@ jobs:
         
       - name: Build ApsimX
         run: ls
-        working-directory: ApsimX/bin
+        working-directory: ApsimX/bin/Debug
       
       - name: Run example apsimx files
-        run: ../ApsimX/Bin/Models.exe *.apsimx
+        run: ../ApsimX/Bin/Debug/net472/Models.exe *.apsimx
         working-directory: examples
       
       # Render book  
