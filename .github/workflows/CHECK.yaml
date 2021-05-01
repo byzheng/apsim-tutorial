@@ -50,10 +50,6 @@ jobs:
       - name: Build ApsimX
         run: msbuild ApsimX.sln
         working-directory: ApsimX
-        
-      - name: Build ApsimX
-        run: ls
-        working-directory: ApsimX/bin/Debug
       
       - name: Run example apsimx files
         run: ../ApsimX/Bin/Debug/net472/Models.exe *.apsimx
